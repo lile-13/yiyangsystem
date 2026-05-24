@@ -7,6 +7,8 @@ public class Customer {
     private String idCard;
     private String contactTel;
     private int bedId;
+    private Integer userId;
+    private Integer levelId;
 
     public Customer() {}
 
@@ -31,8 +33,15 @@ public class Customer {
     public int getBedId() { return bedId; }
     public void setBedId(int bedId) { this.bedId = bedId; }
 
+    public Integer getUserId() { return userId; }
+    public void setUserId(Integer userId) { this.userId = userId; }
+
+    public Integer getLevelId() { return levelId; }
+    public void setLevelId(Integer levelId) { this.levelId = levelId; }
+
     @Override
     public String toString() {
-        return "ID:"+id+" 姓名:"+name+" 年龄:"+age+" 电话:"+contactTel+" 床位:"+bedId;
+        String steward = userId != null && userId > 0 ? "管家ID:" + userId : "无管家";
+        return "ID:"+id+" 姓名:"+name+" 年龄:"+age+" 电话:"+contactTel+" 床位:"+bedId+" "+steward;
     }
 }
